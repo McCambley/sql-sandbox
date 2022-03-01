@@ -265,6 +265,7 @@ SELECT
 FROM
     bands;
 
+-- #3
 SELECT 
     *
 FROM
@@ -274,6 +275,7 @@ WHERE
 ORDER BY release_year ASC
 LIMIT 1;
 
+-- #4
 SELECT 
     bands.name AS 'Band Name', COUNT(albums.id) AS 'Albums'
 FROM
@@ -299,6 +301,31 @@ FROM
     albums ON bands.id = albums.band_id
 GROUP BY albums.band_id
 HAVING COUNT(albums.id) > 0;
+
+-- #5
+SELECT 
+    bands.name AS 'Band Name'
+FROM
+    bands
+        LEFT JOIN
+    albums ON bands.id = albums.band_id
+WHERE
+    albums.id IS NULL
+GROUP BY bands.name;
+    
+-- OR
+SELECT 
+    bands.name AS 'Band Name'
+FROM
+    bands
+        LEFT JOIN
+    albums ON bands.id = albums.band_id
+GROUP BY albums.band_id
+HAVING COUNT(albums.id) = 0;
+
+	
+
+
 
 
 
