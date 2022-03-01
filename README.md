@@ -1,0 +1,1 @@
+# Learning SQL with sample exercises from [Web Dev Simplified](https://github.com/WebDevSimplified/Learn-SQL)
