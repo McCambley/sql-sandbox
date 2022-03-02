@@ -333,3 +333,22 @@ JOIN songs ON songs.album_id = albums.id
 GROUP BY songs.album_id
 ORDER BY Duration DESC
 LIMIT 1;
+
+SELECT name FROM bands
+UNION ALL
+SELECT name FROM songs
+ORDER BY name;
+
+SELECT name
+FROM songs
+WHERE EXISTS
+(SELECT name FROM songs WHERE name LIKE '%a');
+
+-- #7 Update the Release year of the album with no release year
+SELECT id FROM albums WHERE release_year IS NULL;
+
+UPDATE albums
+SET release_year = 1986
+WHERE id = 4;
+
+SELECT * from albums WHERE id = 4;
