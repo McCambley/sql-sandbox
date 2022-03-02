@@ -375,3 +375,10 @@ LEFT JOIN
 	albums
     ON bands.id = albums.band_id
     ORDER BY bands.name;
+
+-- 9 Delete the Band and Album you added in #8
+DELETE FROM albums WHERE albums.band_id = 8;
+SELECT * FROM albums;
+DELETE FROM bands WHERE id = 8;
+SELECT * FROM bands;
+-- :(
