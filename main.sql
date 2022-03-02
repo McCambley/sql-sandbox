@@ -352,3 +352,26 @@ SET release_year = 1986
 WHERE id = 4;
 
 SELECT * from albums WHERE id = 4;
+
+-- #8 Insert a record for your favorite Band and one of their Albums
+SELECT * from bands;
+
+INSERT INTO bands(name) VALUES('flume');
+
+SELECT * FROM bands WHERE name = 'flume';
+
+UPDATE bands 
+SET name = 'Flume'
+WHERE id = 8; 
+
+SELECT * FROM albums; 
+
+INSERT INTO albums(name, release_year, band_id)
+VALUES('Skin', 2016, 8);
+
+SELECT bands.name, albums.name
+FROM bands
+LEFT JOIN
+	albums
+    ON bands.id = albums.band_id
+    ORDER BY bands.name;
