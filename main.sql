@@ -382,3 +382,9 @@ SELECT * FROM albums;
 DELETE FROM bands WHERE id = 8;
 SELECT * FROM bands;
 -- :(
+
+-- 10. Get the Average Length of all Songs
+SELECT length FROM songs;
+
+SELECT AVG(length) as 'Average Song Duration' 
+FROM songs;
